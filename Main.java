@@ -20,7 +20,7 @@ public class Main {
 
                   printWriter.println(str);
                   printWriter.flush();
-                  System.out.println(str);
+                  
               }
 
               @Override
