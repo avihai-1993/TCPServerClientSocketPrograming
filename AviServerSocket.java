@@ -40,14 +40,14 @@ public class AviServerSocket {
     public void listenToMess(ServerSocketReadWriteLisener lisener){
         try {
             while (true) {
-                System.out.println("wating for req");
+                System.out.println("waiting for more requests");
                 Socket socket = this.serverSocket.accept();
                 this.inputStreamReader = new InputStreamReader(socket.getInputStream());
                 this.printWriter = new PrintWriter(socket.getOutputStream());
                 this.bufferedReader = new BufferedReader(inputStreamReader);
                 lisener.onReq(this.bufferedReader);
                 lisener.sendRes(this.printWriter);
-                System.out.println("finished prosec for req");
+                System.out.println("finished processing the request");
                 socket.close();
 
             }
